@@ -11,6 +11,7 @@ app.set('view engine','hbs')
 const publicPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
+const port = process.env.PORT || 3000
 // set views Path
 app.set('views',viewsPath)
 // register partials
@@ -77,6 +78,6 @@ app.get('*',(req,res) => {
 		err: 'Weather Page 404 not found'
 	})
 })
-app.listen(3000,() => {
+app.listen(port,() => {
 	console.log('Server started')
 })
